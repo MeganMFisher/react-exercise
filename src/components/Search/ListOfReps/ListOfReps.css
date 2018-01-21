@@ -1,0 +1,53 @@
+.outerListContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listContainer {
+    width: 48%;
+}
+
+.listContainer h1 {
+    margin-bottom: 15px;
+    font-size: 30px;   
+    color: #444;
+}
+
+.listContainer span {
+    color: #25a2de;
+}
+
+.listTitleContainer {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    padding: 0 20px;
+    background: #f7f7f7;
+    color: #777;
+    border-top: 1px solid #f1f1f1; 
+    border-bottom: 1px solid #f1f1f1; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listTitleContainer div {
+    width: 130px;
+}
+
+.repList {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    padding: 0 20px;
+    border-bottom: 1px solid #f1f1f1; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repList div {
+    width: 130px;
+}
+

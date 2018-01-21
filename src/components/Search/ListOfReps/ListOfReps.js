@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import RepInfo from './RepInfo/RepInfo';
+import './ListOfReps.css';
 
 
 export default class ListOfReps extends Component {
@@ -43,26 +44,30 @@ export default class ListOfReps extends Component {
          this.setState({
              selectedInfo: info[0]
          })
-     }
+    }
 
 
   render() {
     const repList = this.state.stateRepList.map((e, i) => {
         return (
-            <div key={i} onClick={() => this.getSelectedInfo(i)}>
+            <div key={i} className='repList' onClick={() => this.getSelectedInfo(i)}>
                 <p>{e.name}</p>
-                <p>{e.party[0]}</p>
+                <div>
+                    <p>{e.party[0]}</p>
+                </div>
             </div>
         )
     })
 
     return (
-        <div>
-         <div>
-            <h1>List / {this.props.options.type}</h1>
-            <div>
+        <div className='outerListContainer'>
+         <div className='listContainer'>
+            <h1>List / <span>{this.props.options.type}</span></h1>
+            <div className='listTitleContainer'>
                 <p>Name</p>
-                <p>Party</p>
+                <div>
+                    <p>Party</p>
+                </div>
             </div>
              {repList}
          </div>
