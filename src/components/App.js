@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import Search from './Search/Search';
 import '../reset.css';
 import './App.css';
-import Search from './Search/Search';
 
 export default class App extends Component {
   render() {

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import stateListData from './stateList.json'
-import './Search.css';
+import stateListData from './stateList.json';
+import ListOfReps from './ListOfReps/ListOfReps';
 
-export default class App extends Component {
+export default class Search extends Component {
     constructor(props) {
         super(props)
 
@@ -13,13 +13,13 @@ export default class App extends Component {
     }
 
     handleSelectedOptions() {
-        console.log(this.selectedType.value, this.selectedState.value)
-        this.selectedType.value && this.selectedState.value 
-        ? 
-        this.setState({
-            selectedTypeAndState: {type: this.selectedType.value, state: this.selectedState.value}
-        }) 
-        : null
+        if(this.selectedType.value && this.selectedState.value){
+
+            this.setState({
+                selectedTypeAndState: {type: this.selectedType.value, state: this.selectedState.value}
+            })
+        } 
+        
     }
 
   render() {
@@ -31,7 +31,7 @@ export default class App extends Component {
 
     return (
      <div>
-        <div className='searchContainer'>
+        <div>
             <select ref={select => this.selectedType = select}>
                 <option value=''>Select Type</option>
                 <option value='Representatives' >Representative</option>
@@ -43,7 +43,7 @@ export default class App extends Component {
             </select>
             <button onClick={this.handleSelectedOptions}>Submit</button>
          </div>
-
+        <ListOfReps options={this.state.selectedTypeAndState}/>
       </div>
     );
   }
