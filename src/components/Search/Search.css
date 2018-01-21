@@ -19,6 +19,7 @@ select:focus {
 }
 
 .selectContainer div {
+    cursor: pointer;
     padding: 5px 20px;
     background: #f7f7f7;
     color: #444;
