@@ -4,6 +4,7 @@ const cors    = require('cors');
 const app     = express();
 
 app.use(cors());
+app.use( express.static( `${__dirname}/dist` ) );
 
 app.get('/representatives/:state',
   findRepresentativesByState,
@@ -45,6 +46,11 @@ function handleApiResponse(res, next) {
 function jsonResponse(req, res, next) {
   return res.json(res.locals);
 }
+
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 const server = app.listen(3000, () => {
   const host = server.address().address,

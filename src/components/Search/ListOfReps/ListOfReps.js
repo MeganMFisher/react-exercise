@@ -16,14 +16,14 @@ export default class ListOfReps extends Component {
 
     componentWillReceiveProps(nextProps) {
         if(nextProps.options.type === 'Representatives'){
-            axios.get(`http://localhost:3000/representatives/${nextProps.options.state}
+            axios.get(`/representatives/${nextProps.options.state}
             `).then(response => {
                 this.setState({
                     stateRepList: response.data.results
                 })
             })
         } else if(nextProps.options.type === 'Senators') {
-            axios.get(`http://localhost:3000/senators/${nextProps.options.state}`).then(response => {
+            axios.get(`/senators/${nextProps.options.state}`).then(response => {
                 this.setState({
                     stateRepList: response.data.results
                 })
